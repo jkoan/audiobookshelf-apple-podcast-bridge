@@ -9,7 +9,7 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 
 COPY . /app
 
-CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0", "--post=8000"]
+CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0", "--port=8000"]
 EXPOSE 8000
 
 FROM builder as dev-envs
