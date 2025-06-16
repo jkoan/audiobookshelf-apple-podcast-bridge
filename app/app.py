@@ -23,7 +23,7 @@ def get_context_data(**kwargs):
         new_feeds = []
         
         for feed in api_data['feeds']:
-            url = feed['serverAddress'] + feed['feedUrl']
+            url = urllib.parse.urlparse(feed['serverAddress'] + feed['feedUrl'])
             url = url._replace(scheme='podcast')
             
             name = feed['meta']['title']
